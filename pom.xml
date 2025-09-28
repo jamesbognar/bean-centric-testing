@@ -38,6 +38,8 @@
         <maven.compiler.version>3.11.0</maven.compiler.version>
         <maven.javadoc.version>3.6.3</maven.javadoc.version>
         <maven.source.version>3.3.0</maven.source.version>
+        <maven.site.version>4.0.0-M9</maven.site.version>
+        <maven.project-info.version>3.4.5</maven.project-info.version>
     </properties>
     
     <dependencies>
@@ -158,6 +160,18 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <!-- Maven Site Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven.site.version}</version>
+                <configuration>
+                    <locales>en</locales>
+                    <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
+                    <outputEncoding>${project.build.sourceEncoding}</outputEncoding>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     
@@ -199,6 +213,30 @@
                     <failOnError>false</failOnError>
                     <failOnWarnings>false</failOnWarnings>
                     <quiet>true</quiet>
+                </configuration>
+            </plugin>
+            
+            <!-- Maven Project Info Reports Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${maven.project-info.version}</version>
+                <configuration>
+                    <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+                    <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+                    <pluginsManagementEnabled>true</pluginsManagementEnabled>
+                    <pluginsEnabled>true</pluginsEnabled>
+                    <summaryEnabled>true</summaryEnabled>
+                </configuration>
+            </plugin>
+            
+            <!-- Maven Surefire Report Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${maven.surefire.version}</version>
+                <configuration>
+                    <outputDirectory>${project.reporting.outputDirectory}/surefire-report</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
