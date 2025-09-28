@@ -5,11 +5,11 @@ A powerful and intuitive testing framework that extends JUnit with streamlined a
 ## 🔗 Quick Links
 
 ### 📚 Documentation
-- **[📖 Project Site](https://github.com/pages/jamesbognar/bean-centric-testing/)** - Complete project documentation with examples and guides
-- **[🔧 API Documentation](https://github.com/pages/jamesbognar/bean-centric-testing/apidocs/)** - Comprehensive Javadoc reference with examples
-- **[📊 Test Reports](https://github.com/pages/jamesbognar/bean-centric-testing/surefire.html)** - JUnit test execution results and coverage
-- **[📦 Dependencies](https://github.com/pages/jamesbognar/bean-centric-testing/dependencies.html)** - Project dependency analysis
-- **[📋 Project Reports](https://github.com/pages/jamesbognar/bean-centric-testing/project-reports.html)** - Complete Maven site reports
+- **[📖 Project Site](https://jamesbognar.github.io/bean-centric-testing/)** - Complete project documentation with examples and guides
+- **[🔧 API Documentation](https://jamesbognar.github.io/bean-centric-testing/apidocs/)** - Comprehensive Javadoc reference with examples
+- **[📊 Test Reports](https://jamesbognar.github.io/bean-centric-testing/surefire.html)** - JUnit test execution results and coverage
+- **[📦 Dependencies](https://jamesbognar.github.io/bean-centric-testing/dependencies.html)** - Project dependency analysis
+- **[📋 Project Reports](https://jamesbognar.github.io/bean-centric-testing/project-reports.html)** - Complete Maven site reports
 
 > **Note:** All documentation is automatically updated with each commit to provide the latest project information.
 
@@ -130,7 +130,7 @@ void testList() {
 
 ## Core Assertion Methods
 
-### [`assertBean(Object, String, String)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertBean(java.lang.Object,java.lang.String,java.lang.String))
+### [`assertBean(Object, String, String)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertBean(java.lang.Object,java.lang.String,java.lang.String))
 
 Tests properties of a single object using a flexible property syntax with powerful nested access capabilities.
 
@@ -217,7 +217,7 @@ assertBean(user, "enabled,isActive,hasPermission", "true,false,true");
 5. **Getter methods:** `get{Property}()` methods
 6. **Public fields:** Direct field access
 
-### [`assertBeans(Collection, String, String...)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertBeans(java.lang.Object,java.lang.String,java.lang.String...))
+### [`assertBeans(Collection, String, String...)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertBeans(java.lang.Object,java.lang.String,java.lang.String...))
 
 Tests multiple objects in a collection, comparing the same properties across all objects using the same property access logic as `assertBean`.
 
@@ -286,7 +286,7 @@ assertBeans(Arrays.asList(parsed), "prop1,prop2",
 );
 ```
 
-### [`assertList(Object, Object...)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertList(java.lang.Object,java.lang.Object...))
+### [`assertList(Object, Object...)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertList(java.lang.Object,java.lang.Object...))
 
 Tests collection elements directly with support for multiple comparison modes: string conversion, functional validation with predicates, and direct object equality.
 
@@ -344,7 +344,7 @@ assertList(mixedList, stringObj, integerObj, customObj);
 - **Optional:** Single-value Optional objects
 - **Maps:** Converted to list of entries
 
-### [`assertMapped(Object, BiFunction, String, String)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertMapped(java.lang.Object,java.util.function.BiFunction,java.lang.String,java.lang.String))
+### [`assertMapped(Object, BiFunction, String, String)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertMapped(java.lang.Object,java.util.function.BiFunction,java.lang.String,java.lang.String))
 
 Tests objects with custom property access logic using a BiFunction, designed for objects that don't follow standard JavaBean patterns or require specialized property extraction.
 
@@ -422,7 +422,7 @@ assertMapped(legacyBean, (bean, fieldName) -> {
 
 BCT provides several additional assertion methods for common testing scenarios:
 
-#### [`assertContains(String, Object)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertContains(java.lang.String,java.lang.Object))
+#### [`assertContains(String, Object)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertContains(java.lang.String,java.lang.Object))
 
 Tests that a string appears somewhere within the stringified object.
 
@@ -436,7 +436,7 @@ assertContains("Smith", user);
 assertContains("banana", items);
 ```
 
-#### [`assertContainsAll(Object, String...)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertContainsAll(java.lang.Object,java.lang.String...))
+#### [`assertContainsAll(Object, String...)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertContainsAll(java.lang.Object,java.lang.String...))
 
 Tests that all specified strings appear within the stringified object.
 
@@ -449,7 +449,7 @@ assertContainsAll(user, "Alice", "Smith", "25");
 assertContainsAll(user, "alice", "example.com");
 ```
 
-#### [`assertEmpty(Object)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertEmpty(java.lang.Object))
+#### [`assertEmpty(Object)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertEmpty(java.lang.Object))
 
 Tests that collections, arrays, maps, or strings are empty.
 
@@ -466,7 +466,7 @@ assertEmpty(emptyMap);
 assertEmpty(emptyString);
 ```
 
-#### [`assertNotEmpty(Object)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertNotEmpty(java.lang.Object))
+#### [`assertNotEmpty(Object)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertNotEmpty(java.lang.Object))
 
 Tests that collections, arrays, maps, or strings are not empty.
 
@@ -483,7 +483,7 @@ assertNotEmpty(config);
 assertNotEmpty(message);
 ```
 
-#### [`assertSize(int, Object)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertSize(int,java.lang.Object))
+#### [`assertSize(int, Object)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertSize(int,java.lang.Object))
 
 Tests the size/length of collections, arrays, maps, or strings.
 
@@ -500,7 +500,7 @@ assertSize(2, scores);
 assertSize(5, message);
 ```
 
-#### [`assertString(String, Object)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertString(java.lang.String,java.lang.Object))
+#### [`assertString(String, Object)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertString(java.lang.String,java.lang.Object))
 
 Tests the string representation of an object using the configured converter.
 
@@ -515,7 +515,7 @@ assertString("[1, 2, 3]", numbers);
 assertString("2021-01-01", date);
 ```
 
-#### [`assertMatchesGlob(String, Object)`](https://github.com/pages/jamesbognar/bean-centric-testing/javadoc/org/bct/apiBctAssertions.html#assertMatchesGlob(java.lang.String,java.lang.Object))
+#### [`assertMatchesGlob(String, Object)`](https://jamesbognar.github.io/bean-centric-testing/apidocs/org/bct/api/BctAssertions.html#assertMatchesGlob(java.lang.String,java.lang.Object))
 
 Tests that the stringified object matches a glob-style pattern (* and ? wildcards).
 
