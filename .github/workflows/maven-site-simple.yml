@@ -42,6 +42,13 @@ jobs:
     - name: Build and Generate Site
       run: mvn clean site -DskipTests
 
+    - name: Fix Site Structure
+      run: |
+        # Copy files from localized directory to root
+        cp -r target/site/en/* target/site/
+        # Remove the empty en directory
+        rm -rf target/site/en
+
     - name: Setup Pages
       uses: actions/configure-pages@v4
 
