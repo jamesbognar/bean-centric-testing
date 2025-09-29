@@ -40,6 +40,11 @@
             <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/jamesbognar/bean-centric-testing</url>
         </snapshotRepository>
+        <site>
+            <id>github-pages</id>
+            <name>GitHub Pages</name>
+            <url>https://jamesbognar.github.io/bean-centric-testing</url>
+        </site>
     </distributionManagement>
     
     <properties>
